@@ -7,6 +7,9 @@
     --bg-primary: #0d1117;
     --bg-secondary: #161b22;
     --bg-glass: rgba(13, 17, 23, 0.82);
+    --bg-body: radial-gradient(ellipse at 10% 0%, rgba(13, 148, 136, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 5%, rgba(217, 119, 6, 0.08) 0%, transparent 40%),
+      #0a0e14;
     --bg-glass-strong: rgba(13, 17, 23, 0.96);
     --bg-surface: rgba(22, 27, 34, 0.7);
     --bg-surface-elevated: rgba(22, 27, 34, 0.5);
@@ -27,6 +30,9 @@
 
     --border-light: #21262d;
     --border-medium: #30363d;
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --bg-btn: rgba(255, 255, 255, 0.06);
+    --bg-btn-hover: rgba(255, 255, 255, 0.1);
 
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);

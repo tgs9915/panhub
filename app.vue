@@ -151,6 +151,7 @@ provide('showToast', showToast);
 /* 全局样式重置和现代化设计系统 */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Syne:wght@600;700;800&display=swap");
 
+@layer base {
 :root {
   --primary: #0f766e;
   --primary-dark: #115e59;
@@ -162,6 +163,9 @@ provide('showToast', showToast);
   --bg-primary: #fffdf8;
   --bg-secondary: #f7f3ea;
   --bg-glass: rgba(255, 253, 248, 0.86);
+  --bg-body: radial-gradient(circle at 12% -10%, #fff3d9 0%, transparent 42%),
+    radial-gradient(circle at 90% 8%, #d9f7f3 0%, transparent 35%),
+    #fffdf8;
   --bg-glass-strong: rgba(255, 253, 248, 0.96);
   --bg-surface: rgba(255, 255, 255, 0.72);
   --bg-surface-elevated: rgba(255, 255, 255, 0.6);
@@ -182,6 +186,9 @@ provide('showToast', showToast);
 
   --border-light: #e5dfd0;
   --border-medium: #d4c7ab;
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --bg-btn: rgba(255, 255, 255, 0.5);
+  --bg-btn-hover: rgba(255, 255, 255, 0.8);
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -203,6 +210,7 @@ provide('showToast', showToast);
   --transition-normal: 250ms ease;
   --transition-slow: 350ms ease;
 }
+}
 
 /* 基础重置 */
 * {
@@ -214,9 +222,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Manrope", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background: radial-gradient(circle at 12% -10%, #fff3d9 0%, transparent 42%),
-    radial-gradient(circle at 90% 8%, #d9f7f3 0%, transparent 35%),
-    #fffdf8;
+  background: var(--bg-body);
   color: var(--text-primary);
 
   /* iOS Safari兼容性 */
@@ -363,7 +369,7 @@ button {
   background: var(--bg-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--border-glass);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -420,7 +426,7 @@ button {
   width: 40px;
   height: 40px;
   border: none;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--bg-btn);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -429,11 +435,11 @@ button {
   transition: background-color var(--transition-fast), color var(--transition-fast),
     transform var(--transition-fast), box-shadow var(--transition-fast);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border-glass);
 }
 
 .btn-icon:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-btn-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -453,7 +459,7 @@ button {
 
 .github-btn:hover {
   color: var(--primary);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-btn-hover);
 }
 
 .github-btn svg {
